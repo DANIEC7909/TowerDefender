@@ -392,6 +392,7 @@
 "Assets/MeshPathGenerator.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyBase.cs"
+"Assets/Scripts/GameController.cs"
 -langversion:9.0
 
 /deterministic
