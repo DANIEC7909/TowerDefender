@@ -388,11 +388,14 @@
 "Assets/BansheeGz/BGCurve/Scripts/Curve/BGCurveReferenceToPoint.cs"
 "Assets/BansheeGz/BGCurve/Scripts/Curve/BGCurveSettings.cs"
 "Assets/BansheeGz/BGCurve/Scripts/Curve/BGReflectionAdapter.cs"
-"Assets/MeshGenerator.cs"
-"Assets/MeshPathGenerator.cs"
+"Assets/LevelScript.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyBase.cs"
 "Assets/Scripts/GameController.cs"
+"Assets/Scripts/GameEvents.cs"
+"Assets/Scripts/MeshGenerator.cs"
+"Assets/Scripts/MeshPathGenerator.cs"
+"Assets/Scripts/Singleton.cs"
 -langversion:9.0
 
 /deterministic

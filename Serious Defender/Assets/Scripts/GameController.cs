@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GameController : MonoBehaviour
+using BansheeGz.BGSpline;
+public class GameController : Singleton
 {
-    // Start is called before the first frame update
+   public BansheeGz.BGSpline.Components.BGCcMath CurrentLevelSpline;
+    public static GameController Instance;
     void Start()
     {
-        
+        Init();
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
