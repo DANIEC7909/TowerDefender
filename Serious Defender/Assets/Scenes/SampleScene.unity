@@ -123,6 +123,89 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &171095694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171095697}
+  - component: {fileID: 171095696}
+  - component: {fileID: 171095695}
+  m_Layer: 0
+  m_Name: NewMeshPathGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &171095695
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171095694}
+  m_Mesh: {fileID: 0}
+--- !u!23 &171095696
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171095694}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &171095697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171095694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226381030
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,8 +298,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226381030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.026, z: 0}
-  m_LocalScale: {x: 2.918, y: 2.918, z: 2.918}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5.135972, y: 5.135972, z: 5.135972}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -235,8 +318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SplineMath: {fileID: 919592450}
-  SplineDistance: 79.52063
-  Resolution: 10
+  SplineDistance: 122.375374
+  Resolution: 30
+  MeshToSegmentate: {fileID: 0}
 --- !u!1 &235845204
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +345,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235845204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.59732836, y: 2.3125708, z: -2.2631133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -566,56 +650,56 @@ MonoBehaviour:
   closed: 0
   points:
   - controlType: 1
-    positionLocal: {x: 5.449545, y: 0, z: 13.969375}
+    positionLocal: {x: 5.379589, y: 0, z: 25.525227}
     controlFirstLocal: {x: 1, y: 0, z: 0}
     controlSecondLocal: {x: -1, y: -0, z: -0}
     pointTransform: {fileID: 0}
     curve: {fileID: 919592448}
     fieldsValues: []
   - controlType: 1
-    positionLocal: {x: 5.38673, y: 0, z: -6.6450233}
+    positionLocal: {x: 8.911014, y: 0, z: -6.899562}
     controlFirstLocal: {x: 0.08288288, y: 0, z: 4.8609085}
     controlSecondLocal: {x: -0.08288288, y: -0, z: -4.8609085}
     pointTransform: {fileID: 0}
     curve: {fileID: 919592448}
     fieldsValues: []
   - controlType: 1
-    positionLocal: {x: 3.1921587, y: 0, z: -11.901131}
+    positionLocal: {x: 0.97124946, y: 0, z: -17.246637}
     controlFirstLocal: {x: 0.43891433, y: 0, z: 1.0512215}
     controlSecondLocal: {x: -0.43891433, y: -0, z: -1.0512215}
     pointTransform: {fileID: 0}
     curve: {fileID: 919592448}
     fieldsValues: []
   - controlType: 1
-    positionLocal: {x: -6.1206017, y: 0, z: -12.720663}
+    positionLocal: {x: -11.12626, y: 0, z: -18.229362}
     controlFirstLocal: {x: 1.7719479, y: -0, z: -0.13902092}
     controlSecondLocal: {x: -1.7719479, y: 0, z: 0.13902092}
     pointTransform: {fileID: 0}
     curve: {fileID: 919592448}
     fieldsValues: []
   - controlType: 1
-    positionLocal: {x: -10.813316, y: 0, z: -6.442479}
+    positionLocal: {x: -22.167797, y: 0, z: -7.9471374}
     controlFirstLocal: {x: 0.4713936, y: 0, z: -1.2761526}
     controlSecondLocal: {x: -0.4713936, y: -0, z: 1.2761526}
     pointTransform: {fileID: 0}
     curve: {fileID: 919592448}
     fieldsValues: []
   - controlType: 1
-    positionLocal: {x: -12.398802, y: 0, z: 0.4625635}
+    positionLocal: {x: -15.295148, y: 0, z: 5.0226073}
     controlFirstLocal: {x: -1.1632862, y: -0, z: -1.5279641}
     controlSecondLocal: {x: 1.1632862, y: 0, z: 1.5279641}
     pointTransform: {fileID: 0}
     curve: {fileID: 919592448}
     fieldsValues: []
   - controlType: 1
-    positionLocal: {x: -3.4606514, y: 0, z: 5.4740496}
-    controlFirstLocal: {x: -1.78763, y: 0, z: -1.0022972}
-    controlSecondLocal: {x: 1.78763, y: -0, z: 1.0022972}
+    positionLocal: {x: -5.533248, y: 0, z: 11.36913}
+    controlFirstLocal: {x: -1.932064, y: 0, z: -1.1615219}
+    controlSecondLocal: {x: 1.932064, y: -0, z: 1.1615219}
     pointTransform: {fileID: 0}
     curve: {fileID: 919592448}
     fieldsValues: []
   - controlType: 1
-    positionLocal: {x: 14.22633, y: 0, z: 5.317384}
+    positionLocal: {x: 16.859722, y: 0, z: 11.92174}
     controlFirstLocal: {x: -3.5373964, y: 0, z: 0.031333163}
     controlSecondLocal: {x: 3.5373964, y: -0, z: -0.031333163}
     pointTransform: {fileID: 0}
@@ -644,7 +728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919592446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.419479, y: -3.9357316, z: -6.420912}
+  m_LocalPosition: {x: 0.01, y: 0, z: 0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -821,7 +905,7 @@ GameObject:
   - component: {fileID: 1511027446}
   m_Layer: 0
   m_Name: LevelScript
-  m_TagString: Untagged
+  m_TagString: LevelScript
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
