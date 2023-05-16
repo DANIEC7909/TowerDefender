@@ -15,11 +15,16 @@ public class MeshGenerator : MonoBehaviour
         Ghost = GameObject.CreatePrimitive(PrimitiveType.Cube);
         splineMath = GetComponent<BGCcMath>();
         SplineDistance = splineMath.GetDistance();
+        Ghost.AddComponent<Gnar>();
     }
     
     // Update is called once per frame
     void Update()
     {
+        if(Ghost == null)
+        {
+            return;
+        }
         if (localDistnace > SplineDistance)
         {
             localDistnace = 0;

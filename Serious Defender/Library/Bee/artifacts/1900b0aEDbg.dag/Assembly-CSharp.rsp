@@ -396,7 +396,10 @@
 "Assets/Scripts/LevelScript.cs"
 "Assets/Scripts/MeshGenerator.cs"
 "Assets/Scripts/MeshPathGenerator.cs"
+"Assets/Scripts/Projectile.cs"
 "Assets/Scripts/Singleton.cs"
+"Assets/Scripts/TurretBase.cs"
+"Assets/Scripts/TurretObject.cs"
 -langversion:9.0
 
 /deterministic

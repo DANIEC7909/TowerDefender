@@ -7,7 +7,7 @@ public class Gnar : EnemyBase
     // Start is called before the first frame update
     void Start()
     {
-        InitilizeCurve(GameController.Instance.CurrentLevelSpline);
+        Init(GameController.Instance.CurrentLevelSpline);
         Health = 100;
         CanAttackTowers = false;
     }
