@@ -130,3 +130,4 @@ MonoBehaviour:
   rb: {fileID: 6956810975590914198}
   Direction: {x: 0, y: 0, z: 125.7}
   Speed: 187.3
+  AttackTag: Enemy

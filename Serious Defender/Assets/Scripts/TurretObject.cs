@@ -9,4 +9,5 @@ public class TurretObject : ScriptableObject
     public int Damage;
     public float ShootCoolDown;
     public float AttackRange;
+    public Projectile Projectile;
 }

@@ -16,6 +16,7 @@ public class MeshGenerator : MonoBehaviour
         splineMath = GetComponent<BGCcMath>();
         SplineDistance = splineMath.GetDistance();
         Ghost.AddComponent<Gnar>();
+        Ghost.tag = "Enemy";
     }
     
     // Update is called once per frame

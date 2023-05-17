@@ -9,7 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-
+/[Aa]rtifacts/
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
@@ -1860,3 +1860,6 @@ Serious Defender/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbef
 Serious Defender/Library/StateCache/PrefabStageHierarchy/50/509a4757da6816a44569e673d0d81cd9.json
 Serious Defender/Library/StateCache/SceneView/2d/2ddd9bdc58c3db4240eb17efc537fc3c.json
 Serious Defender/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+*.dwlt
+*.dwlt
+*.log

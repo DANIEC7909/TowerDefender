@@ -14,6 +14,8 @@ public class TurretBase : MonoBehaviour
     public Projectile Projectile;
     public Transform TurretHead;
     public Transform TurretMuzzle;
+    public Animator Animator;
+    public float AxisMove;
     public void ObtainTarget()
     {
         int id = -1;
@@ -54,6 +56,10 @@ public class TurretBase : MonoBehaviour
     {
        Projectile lp = Instantiate(Projectile, TurretMuzzle.position, Quaternion.identity);
         lp.Direction = TurretMuzzle.forward;
+        if (Animator != null)
+        {
+            Animator.SetTrigger("Shoot");
+        }
     }
     public void Start()
     {
@@ -62,6 +68,7 @@ public class TurretBase : MonoBehaviour
         ShootingCooldown = TurretObject.ShootCoolDown;
         ShootingCooldown = TurretObject.ShootCoolDown;
         AtackRange = TurretObject.AttackRange;
+        Projectile = TurretObject.Projectile;
     }
     public void Update()
     {
@@ -73,7 +80,9 @@ public class TurretBase : MonoBehaviour
         {
             if (IsActive)
             {
-                TurretHead.LookAt(Target.transform);
+              Vector3 pos = Target.currentSplineMathComponent.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, Target.ActualCurveDistance + AxisMove);
+                TurretHead.LookAt(pos);
+              
                 localShootingCooldown += Time.deltaTime;
                 if (localShootingCooldown > ShootingCooldown)
                 {

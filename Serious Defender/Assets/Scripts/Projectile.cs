@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] Rigidbody rb;
     public Vector3 Direction;
     public float Speed;
+    [SerializeField] string AttackTag;
 
     void FixedUpdate()
     {
@@ -16,5 +17,11 @@ public class Projectile : MonoBehaviour
     {
         Destroy(gameObject, 5);     
     }
-   
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag(AttackTag))
+        {
+            Debug.Log("hit");
+        }
+    }
 }

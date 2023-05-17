@@ -10,6 +10,7 @@ public  class EnemyBase : MonoBehaviour
     public float ActualCurveDistance;
     public float Health;
     public bool CanAttackTowers;
+    public float ActualUnitSpeed;
     protected void Init(BGCcMath SplineMath)
     {
         currentSplineMathComponent = SplineMath;
@@ -21,7 +22,13 @@ public  class EnemyBase : MonoBehaviour
     {
         if (ActualCurveDistance < CurveDistance)
         {
+            ActualUnitSpeed = (speed * Time.deltaTime);
+
             ActualCurveDistance += (speed*Time.deltaTime);
+            if (ActualCurveDistance >= CurveDistance)
+            {
+                ActualCurveDistance = 0;
+            }
             currentSplineMathComponent.CalcPositionByDistance(ActualCurveDistance);
         }
     }
