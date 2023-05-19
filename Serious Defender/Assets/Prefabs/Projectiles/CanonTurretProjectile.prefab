@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: da0516582946a264fad202bca8ee1644, type: 2}
+    - target: {fileID: 6956810975590914193, guid: eb4d98049cca9c649952494657eac99f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6956810975590914194, guid: eb4d98049cca9c649952494657eac99f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -151,7 +155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6956810975590914196, guid: eb4d98049cca9c649952494657eac99f, type: 3}
       propertyPath: m_Name
-      value: CanonTurret
+      value: CanonTurretProjectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb4d98049cca9c649952494657eac99f, type: 3}

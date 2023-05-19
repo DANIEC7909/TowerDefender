@@ -10,30 +10,45 @@ public  class EnemyBase : MonoBehaviour
     public float ActualCurveDistance;
     public float Health;
     public bool CanAttackTowers;
-    public float ActualUnitSpeed;
+    public float UnitSpeed;
+
     protected void Init(BGCcMath SplineMath)
     {
         currentSplineMathComponent = SplineMath;
         CurveDistance = currentSplineMathComponent.GetDistance();
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Add(this);
     }
-  
+  protected void KillUnit()
+    {
+        GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Remove(this);
+        Destroy(gameObject);
+    }
     protected void MoveBySpline(float speed)
     {
         if (ActualCurveDistance < CurveDistance)
         {
-            ActualUnitSpeed = (speed * Time.deltaTime);
+          
 
             ActualCurveDistance += (speed*Time.deltaTime);
             if (ActualCurveDistance >= CurveDistance)
             {
                 ActualCurveDistance = 0;
             }
-            currentSplineMathComponent.CalcPositionByDistance(ActualCurveDistance);
+          transform.position=  currentSplineMathComponent.CalcPositionByDistance(ActualCurveDistance)+new Vector3(0,2);
         }
     }
     protected void Attack()
     {
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+     
+        if (other.transform.CompareTag("Projectile"))
+        {
+            KillUnit();
+            Destroy(other.gameObject);
+        }
     }
 }
