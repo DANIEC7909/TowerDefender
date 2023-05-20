@@ -11,6 +11,7 @@ public class LevelScript : MonoBehaviour
     public int CurrentWave;
     public bool AllUnitsSpawned;
     [SerializeField] AudioClip LevelMusic;
+    public bool IsSpawning;
     private void OnEnable()
     {
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
@@ -44,8 +45,15 @@ public class LevelScript : MonoBehaviour
 
     public IEnumerator NextWave()
     {
-
+        if (CurrentWave > levelObject.WaveScenario.Count)
+        {
+            Debug.Log("You win");
+            yield return null;
+        }
+        IsSpawning = true;
+        AllUnitsSpawned = false;
         Wave wave = levelObject.WaveScenario[CurrentWave];
+        CurrentWave++;
         foreach (EnemyPack ep in wave.EnemyTypesInWave)
         {
             for (int amount = 0; amount < ep.Amount; amount++)
@@ -55,9 +63,10 @@ public class LevelScript : MonoBehaviour
             }
             AllUnitsSpawned = true;
         }
-        CurrentWave++;
+        IsSpawning = false;
     }
 }
+#if UNITY_EDITOR
 [CustomEditor(typeof(LevelScript), true)]
 public class LevelScripted : Editor
 {
@@ -71,3 +80,4 @@ public class LevelScripted : Editor
         }
     }
 }
+#endif

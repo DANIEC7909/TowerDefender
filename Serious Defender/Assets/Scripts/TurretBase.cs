@@ -54,7 +54,7 @@ public class TurretBase : MonoBehaviour
     }
     public void Shoot()
     {
-       Projectile lp = Instantiate(Projectile, TurretMuzzle.position, Quaternion.identity);
+        Projectile lp = Instantiate(Projectile, TurretMuzzle.position, Quaternion.identity);
         lp.Direction = TurretMuzzle.forward;
         if (Animator != null)
         {
@@ -78,11 +78,18 @@ public class TurretBase : MonoBehaviour
         }
         else
         {
+            if (Vector3.Distance(transform.position, Target.transform.position) > AtackRange)
+            {
+                ObtainTarget();
+            }
+       
+       
             if (IsActive)
             {
-              Vector3 pos = Target.currentSplineMathComponent.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, Target.ActualCurveDistance + AxisMove);
-                TurretHead.LookAt(pos);
-              
+                Vector3 pos =Target.currentSplineMathComponent.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, Target.ActualCurveDistance + AxisMove);
+                Vector3 pos2 = new Vector3(pos.x, Target.transform.position.y, pos.z);
+                TurretHead.LookAt(pos2);
+
                 localShootingCooldown += Time.deltaTime;
                 if (localShootingCooldown > ShootingCooldown)
                 {

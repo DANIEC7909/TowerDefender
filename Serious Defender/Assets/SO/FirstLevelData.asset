@@ -15,11 +15,25 @@ MonoBehaviour:
   WaveScenario:
   - EnemyTypesInWave:
     - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
-      Amount: 5
+      Amount: 20
+      SpawnTime: 1
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 20
       SpawnTime: 1
     - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
+      Amount: 10
+      SpawnTime: 1
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 20
+      SpawnTime: 1
+    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
+      Amount: 10
+      SpawnTime: 1
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
       Amount: 5
-      SpawnTime: 2
+      SpawnTime: 1
     - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
-      Amount: 50
-      SpawnTime: 0.5
+      Amount: 5
+      SpawnTime: 1

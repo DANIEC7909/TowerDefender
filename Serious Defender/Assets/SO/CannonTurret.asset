@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c4373360c46d2498b45952b40879d7, type: 3}
   m_Name: CannonTurret
   m_EditorClassIdentifier: 
-  Price: 800
+  Price: 1000
   Health: 2
   Damage: 0
   ShootCoolDown: 0.1

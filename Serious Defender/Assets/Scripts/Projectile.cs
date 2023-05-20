@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public Vector3 Direction;
     public float Speed;
     [SerializeField] string AttackTag;
+    public int Damage;
 
     void FixedUpdate()
     {
@@ -17,11 +18,12 @@ public class Projectile : MonoBehaviour
     {
         Destroy(gameObject, 5);     
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.CompareTag(AttackTag))
+    private void OnTriggerEnter(Collider other)
+    { 
+        if (other.transform.CompareTag(AttackTag))
         {
-            Debug.Log("hit");
+            other.transform.GetComponent<EnemyBase>().DealDamage(Damage);
+            Debug.Log("Enemy hit");
         }
     }
 }

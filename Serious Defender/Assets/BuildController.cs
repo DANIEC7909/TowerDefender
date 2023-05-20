@@ -46,7 +46,11 @@ public class BuildController : MonoBehaviour
                             {
                                 Instantiate(tb, hit.transform.position, Quaternion.identity);
                                 GameController.Instance.Money -= tb.TurretObject.Price;
-                                GameEvents.OnbuildingModeChanged_c(false); 
+                                GameEvents.OnbuildingModeChanged_c(false);
+                            }
+                            else
+                            {
+                                GameEvents.OnbuildingModeChanged_c(false);
                             }
 
                         }

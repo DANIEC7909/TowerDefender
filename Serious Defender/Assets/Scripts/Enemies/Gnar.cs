@@ -15,6 +15,7 @@ public class Gnar : EnemyBase
     // Update is called once per frame
     void Update()
     {
-        MoveBySpline(UnitSpeed);
+        Tick();
+     
     }
 }

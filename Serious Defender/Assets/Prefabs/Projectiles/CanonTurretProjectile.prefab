@@ -157,6 +157,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanonTurretProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 6956810975590914198, guid: eb4d98049cca9c649952494657eac99f, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956810975590914199, guid: eb4d98049cca9c649952494657eac99f, type: 3}
+      propertyPath: Damage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb4d98049cca9c649952494657eac99f, type: 3}
 --- !u!4 &2128709621407444729 stripped

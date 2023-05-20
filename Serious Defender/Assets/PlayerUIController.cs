@@ -9,6 +9,7 @@ public class PlayerUIController : MonoBehaviour
     [SerializeField] GameObject PlayerUI;
     [SerializeField] TextMeshProUGUI Money;
     [SerializeField] TextMeshProUGUI Wave;
+    [SerializeField] GameObject NextWaveBtn;
     private void OnEnable()
     {
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
@@ -22,6 +23,14 @@ public class PlayerUIController : MonoBehaviour
         if (Wave != null)
         {
             Wave.text = GameController.Instance.CurrentLevelScript.CurrentWave.ToString();
+        }
+        if (!GameController.Instance.CurrentLevelScript.AllUnitsSpawned &&GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Count>0)
+        {
+            NextWaveBtn.SetActive(false);
+        }
+        else if (GameController.Instance.CurrentLevelScript.AllUnitsSpawned && GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Count <= 0)
+        {
+            NextWaveBtn.SetActive(true);
         }
     }
     private void GameEvents_OnLevelLoaded(UnityEngine.SceneManagement.Scene scene)
@@ -39,4 +48,5 @@ public class PlayerUIController : MonoBehaviour
     {
         GameEvents.OnLevelLoaded -= GameEvents_OnLevelLoaded;
     }
+
 }

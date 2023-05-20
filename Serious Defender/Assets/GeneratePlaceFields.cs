@@ -75,7 +75,7 @@ public class GeneratePlaceFields : MonoBehaviour
 
     }
 }
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(GeneratePlaceFields), true)]
 public class GeneratePlaceFieldsed : Editor
 {
@@ -99,3 +99,4 @@ public class GeneratePlaceFieldsed : Editor
 
     }
 }
+#endif

@@ -1032,14 +1032,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4194553790059198514}
-  m_LocalRotation: {x: 0.47412243, y: -0.46764192, z: -0.4906801, w: 0.56191814}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -0.0428, y: 0, z: 0.042299993}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8219961592934087655}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 4.239, y: -83.492, z: -86.039}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
 --- !u!1 &4194553790276809457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   TurretHead: {fileID: 4194553790276809458}
   TurretMuzzle: {fileID: 4194553790059198515}
   Animator: {fileID: 6209853607382833123}
-  AxisMove: 2.2
+  AxisMove: 1
 --- !u!1 &8045106305722773321
 GameObject:
   m_ObjectHideFlags: 0

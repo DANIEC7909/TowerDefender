@@ -11,16 +11,29 @@ public  class EnemyBase : MonoBehaviour
     public float Health;
     public bool CanAttackTowers;
     public float UnitSpeed;
-
+    public int MoneyIncreesement;
     protected void Init(BGCcMath SplineMath)
     {
         currentSplineMathComponent = SplineMath;
         CurveDistance = currentSplineMathComponent.GetDistance();
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Add(this);
     }
-  protected void KillUnit()
+    public void DealDamage(int dmg)
+    {
+        Health -= dmg;
+    }
+    public void Tick()
+    {
+        MoveBySpline(UnitSpeed);
+        if (Health <= 0)
+        {
+            KillUnit();
+        }
+    }
+    protected void KillUnit()
     {
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Remove(this);
+        GameController.Instance.Money += MoneyIncreesement;
         Destroy(gameObject);
     }
     protected void MoveBySpline(float speed)
@@ -42,7 +55,7 @@ public  class EnemyBase : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
      
         if (other.transform.CompareTag("Projectile"))
@@ -50,5 +63,5 @@ public  class EnemyBase : MonoBehaviour
             KillUnit();
             Destroy(other.gameObject);
         }
-    }
+    }*/
 }
