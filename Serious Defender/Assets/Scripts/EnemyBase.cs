@@ -54,14 +54,21 @@ public  class EnemyBase : MonoBehaviour
     {
 
     }
-
-   /* private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-     
-        if (other.transform.CompareTag("Projectile"))
+        if (other.transform.CompareTag("PlayerGoal"))
         {
-            KillUnit();
-            Destroy(other.gameObject);
+            Application.Quit();
+            GameEvents.OnGameFailed_c();
         }
-    }*/
+    }
+    /* private void OnTriggerEnter(Collider other)
+     {
+
+         if (other.transform.CompareTag("Projectile"))
+         {
+             KillUnit();
+             Destroy(other.gameObject);
+         }
+     }*/
 }

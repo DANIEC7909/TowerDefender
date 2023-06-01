@@ -17,13 +17,24 @@ public class GameController : Singleton
         Instance = this;
         GameEvents.OnLevelLoaded_c(gameObject.scene);
     }
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
             BuildingMode = !BuildingMode;
             GameEvents.OnbuildingModeChanged_c(BuildingMode);
+        }
+
+        if (GameController.Instance.CurrentLevelScript != null)
+        {
+            if (GameController.Instance.CurrentLevelScript.CurrentWave >= GameController.Instance.CurrentLevelScript.levelObject.WaveScenario.Count&& GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Count==0&& GameController.Instance.CurrentLevelScript.AllUnitsSpawned)
+            {
+#if UNITY_EDITOR
+                Debug.Break();
+#endif
+                GameEvents.OnGameWin_c();
+            }
         }
     }
 

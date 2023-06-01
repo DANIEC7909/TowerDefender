@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d83dd8cf5024f1489d6179d7a05d0ad, type: 3}
+  m_Name: TestLEvel
+  m_EditorClassIdentifier: 
+  WaveScenario:
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 5
+      SpawnTime: 1

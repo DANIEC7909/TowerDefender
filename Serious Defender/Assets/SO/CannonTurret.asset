@@ -15,7 +15,7 @@ MonoBehaviour:
   Price: 1000
   Health: 2
   Damage: 0
-  ShootCoolDown: 0.1
+  ShootCoolDown: 0.15
   AttackRange: 20
   Projectile: {fileID: 2128709621407444732, guid: c32da9ad922254d4e9af3389d0e74098, type: 3}
   ID: 0

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - PlaceField
   - Projectile
+  - PlayerGoal
   layers:
   - Default
   - TransparentFX

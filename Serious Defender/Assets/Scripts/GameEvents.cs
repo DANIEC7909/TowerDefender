@@ -33,7 +33,19 @@ public class GameEvents : Singleton
     {
         OnNextWave?.Invoke();
     }
+    public delegate void GameFailed();
+    public static event GameFailed OnGameFailed;
+    public static void OnGameFailed_c()
+    {
+        OnGameFailed?.Invoke();
+    }
 
+    public delegate void GameWin();
+    public static event GameWin OnGameWin;
+    public static void OnGameWin_c()
+    {
+        OnGameWin?.Invoke();
+    }
 
     private void Start()
     {

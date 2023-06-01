@@ -7,7 +7,7 @@ public class LevelScript : MonoBehaviour
 {
     [SerializeField] BGCcMath SplineMath;
     public List<EnemyBase> EnemiesOnLevel = new List<EnemyBase>();
-    [SerializeField] LevelObject levelObject;
+    public LevelObject levelObject;
     public int CurrentWave;
     public bool AllUnitsSpawned;
     [SerializeField] AudioClip LevelMusic;
@@ -35,7 +35,7 @@ public class LevelScript : MonoBehaviour
     void Start()
     {
         GameEvents.OnLevelLoaded_c(gameObject.scene);
-       
+
         if (SplineMath != null)
         {
             GameController.Instance.CurrentLevelSpline = SplineMath;
@@ -47,7 +47,10 @@ public class LevelScript : MonoBehaviour
     {
         if (CurrentWave > levelObject.WaveScenario.Count)
         {
-            Debug.Log("You win");
+#if UNITY_EDITOR
+            Debug.Break();
+#endif
+            GameEvents.OnGameWin_c();
             yield return null;
         }
         IsSpawning = true;

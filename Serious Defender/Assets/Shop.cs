@@ -21,7 +21,6 @@ public class Shop : MonoBehaviour
     }
     public void SelectTurret(int id)
     {
-        Debug.Log("To jest wie¿yczka" + id + "");
         GameEvents.OnbuildingModeChanged_c(true);
         GameController.Instance.BuildController.TurretID = id;
     }

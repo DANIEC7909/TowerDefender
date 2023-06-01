@@ -16,14 +16,14 @@ public class Projectile : MonoBehaviour
     }
     public void Start()
     {
-        Destroy(gameObject, 5);     
+        Destroy(gameObject, 3);     
     }
     private void OnTriggerEnter(Collider other)
     { 
         if (other.transform.CompareTag(AttackTag))
         {
             other.transform.GetComponent<EnemyBase>().DealDamage(Damage);
-            Debug.Log("Enemy hit");
+          
         }
     }
 }
