@@ -8,6 +8,7 @@ public class ShowOnBuildMode : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnBuildingModeChanged += GameEvents_OnBuildingModeChanged;
+        MeshRenderer.enabled = false;
     }
 
     private void GameEvents_OnBuildingModeChanged(bool state)

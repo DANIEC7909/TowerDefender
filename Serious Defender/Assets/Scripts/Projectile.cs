@@ -9,10 +9,11 @@ public class Projectile : MonoBehaviour
     public float Speed;
     [SerializeField] string AttackTag;
     public int Damage;
-
+    public Transform target;
     void FixedUpdate()
     {
         rb.AddForce(Direction * Speed);
+        transform.LookAt(target);
     }
     public void Start()
     {

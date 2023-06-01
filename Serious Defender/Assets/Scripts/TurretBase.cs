@@ -56,6 +56,7 @@ public class TurretBase : MonoBehaviour
     {
         Projectile lp = Instantiate(Projectile, TurretMuzzle.position, Quaternion.identity);
         lp.Direction = TurretMuzzle.forward;
+        lp.target = Target.transform;
         if (Animator != null)
         {
             Animator.SetTrigger("Shoot");

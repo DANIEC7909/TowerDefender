@@ -20,7 +20,7 @@ public class GeneratePlaceFields : MonoBehaviour
     {
         SplineDistance = splineMath.GetDistance();
         calculatedDistance = SplineDistance / Ratio;
-        ; for (float dist = 0; dist < SplineDistance; dist += calculatedDistance)
+        for (float dist = 0; dist < SplineDistance; dist += calculatedDistance)
         {
             Vector3 pos = splineMath.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, dist);
 
@@ -62,7 +62,7 @@ public class GeneratePlaceFields : MonoBehaviour
 
         for (float dist = 0; dist < SplineDistance; dist += calculatedDistance)
         {
-           SplineVertex.Add(splineMath.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, dist));
+            SplineVertex.Add(splineMath.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, dist));
         }
 
         //generate vertex 
@@ -79,29 +79,29 @@ public class GeneratePlaceFields : MonoBehaviour
 
         }
         int[] Tris = new int[2 * (SplineVertex.Count - 1) * 3];
-    Vector2[] uvs = new Vector2[Vertexes.Count];
-        for(int i =0; i < SplineVertex.Count;i++)
+        Vector2[] uvs = new Vector2[Vertexes.Count];
+        for (int i = 0; i < SplineVertex.Count; i++)
         {
-           
-                float completionPercent = i / (float)(SplineVertex.Count - 1);
-                uvs[vertIndex] = new Vector2(0, completionPercent);
-                uvs[vertIndex + 1] = new Vector2(1, completionPercent);
-           
+
+            float completionPercent = i / (float)(SplineVertex.Count - 1);
+            uvs[vertIndex] = new Vector2(0, completionPercent);
+            uvs[vertIndex + 1] = new Vector2(1, completionPercent);
+
             if (i < SplineVertex.Count - 1)
             {
                 Tris[TriIndex] = vertIndex;
-                Tris[TriIndex+1] = vertIndex+2;
-                Tris[TriIndex+2 ] = vertIndex+1;
+                Tris[TriIndex + 1] = vertIndex + 2;
+                Tris[TriIndex + 2] = vertIndex + 1;
 
-                Tris[TriIndex+3] = vertIndex+1;
-                Tris[TriIndex+4] = vertIndex+2;
-                Tris[TriIndex+5] = vertIndex+3;
+                Tris[TriIndex + 3] = vertIndex + 1;
+                Tris[TriIndex + 4] = vertIndex + 2;
+                Tris[TriIndex + 5] = vertIndex + 3;
             }
             vertIndex += 2;
             TriIndex += 6;
         }
         PathMesh.vertices = Vertexes.ToArray();
-       PathMesh.triangles = Tris;
+        PathMesh.triangles = Tris;
         PathMesh.uv = uvs;
         //   PathMesh.SetTriangles(Tris, 0);
         PathMesh.RecalculateNormals();

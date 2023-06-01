@@ -2080,6 +2080,14 @@ PrefabInstance:
       propertyPath: MusicManager
       value: 
       objectReference: {fileID: 1587343712}
+    - target: {fileID: 1892359894052563761, guid: 7494501ade937e64fae62eaef89af917, type: 3}
+      propertyPath: Turrets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892359894052563761, guid: 7494501ade937e64fae62eaef89af917, type: 3}
+      propertyPath: Turrets.Array.data[1]
+      value: 
+      objectReference: {fileID: 7107405054057685494, guid: 07fd1188ea54b844d919fc6da847e4f6, type: 3}
     - target: {fileID: 1892359894052563762, guid: 7494501ade937e64fae62eaef89af917, type: 3}
       propertyPath: m_RootOrder
       value: 0
