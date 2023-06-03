@@ -7,11 +7,18 @@ public class GameEvents : Singleton
 
     public delegate void BuildModeChanged(bool state);
     public static event BuildModeChanged OnBuildingModeChanged;
+   
     public static void OnbuildingModeChanged_c(bool state)
     {
         OnBuildingModeChanged?.Invoke(state);
     }
 
+    public delegate void BuildingPlaced();
+    public static event BuildingPlaced OnBuildingPlaced;
+    public static void OnBuildingPlaced_c()
+    {
+        OnBuildingPlaced?.Invoke();
+    }
 
     public delegate void MusicStateChanged(MusicState state,AudioClip clip=null);
     public static event MusicStateChanged OnMusicStateChanged;

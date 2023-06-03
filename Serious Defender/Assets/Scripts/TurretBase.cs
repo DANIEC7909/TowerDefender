@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TurretBase : MonoBehaviour
 {
+
     public TurretObject TurretObject;
     public int Health;
     public float ShootingCooldown;
@@ -16,6 +17,9 @@ public class TurretBase : MonoBehaviour
     public Transform TurretMuzzle;
     public Animator Animator;
     public float AxisMove;
+    public float  ConstAxisMove = 1;
+    public float ConstUnitSpeed = 3;
+    public PiramidTurret BuffedBy;
     public void ObtainTarget()
     {
         int id = -1;
@@ -30,8 +34,6 @@ public class TurretBase : MonoBehaviour
             }
             else
             {
-
-
                 if (Vector3.Distance(transform.position, eb.transform.position) < AtackRange)
                 {
                     EnemiesInRange.Add(eb);
@@ -51,6 +53,10 @@ public class TurretBase : MonoBehaviour
             }
         }
         Target = LocalTarget;
+
+        float k = ConstAxisMove / ConstUnitSpeed;
+        AxisMove = k * Target.UnitSpeed;
+       Debug.Log(AxisMove);
     }
     public void Shoot()
     {
@@ -62,7 +68,7 @@ public class TurretBase : MonoBehaviour
             Animator.SetTrigger("Shoot");
         }
     }
-    public void Start()
+    protected void Init()
     {
         Health = TurretObject.Health;
         Damage = TurretObject.Damage;
@@ -71,7 +77,7 @@ public class TurretBase : MonoBehaviour
         AtackRange = TurretObject.AttackRange;
         Projectile = TurretObject.Projectile;
     }
-    public void Update()
+    protected void Tick()
     {
         if (Target == null)
         {
@@ -94,11 +100,11 @@ public class TurretBase : MonoBehaviour
                 localShootingCooldown += Time.deltaTime;
                 if (localShootingCooldown > ShootingCooldown)
                 {
+                       //shoot projetile;
                     Shoot();
                     localShootingCooldown = 0;
                 }
             }
         }
-        //shoot projetile;
     }
 }

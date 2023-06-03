@@ -10,9 +10,9 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /[Aa]rtifacts/
-Serious Defender/Library/Artifacts/
-Serious Defender/Library/Logs/
-Serious Defender/Library/Temp/
+/Library/Artifacts/
+/Library/Logs/
+/Library/Temp/
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
