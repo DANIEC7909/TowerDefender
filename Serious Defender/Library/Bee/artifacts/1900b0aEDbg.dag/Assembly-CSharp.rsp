@@ -356,9 +356,12 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/BuildController.cs"
 "Assets/CameraController.cs"
+"Assets/CanonTurret.cs"
 "Assets/GeneratePlaceFields.cs"
+"Assets/LaserTurret.cs"
 "Assets/MainMenuController.cs"
 "Assets/MusicManager.cs"
+"Assets/PiramidTurret.cs"
 "Assets/PlayerUIController.cs"
 "Assets/Scripts/BansheeGz/BGCurve/Scripts/Cc/BGCcCursor.cs"
 "Assets/Scripts/BansheeGz/BGCurve/Scripts/Cc/BGCcCursorChangeLinear.cs"
@@ -409,6 +412,7 @@
 "Assets/Scripts/TurretObject.cs"
 "Assets/Shop.cs"
 "Assets/ShowOnBuildMode.cs"
+"Assets/TestSCript.cs"
 -langversion:9.0
 
 /deterministic
