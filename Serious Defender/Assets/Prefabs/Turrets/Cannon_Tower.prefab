@@ -1623,7 +1623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7107405054057685493}
-  - component: {fileID: 1673492494253002970}
+  - component: {fileID: 7107405054057685494}
   m_Layer: 0
   m_Name: Cannon_Tower
   m_TagString: Untagged
@@ -1662,7 +1662,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1673492494253002970
+--- !u!114 &7107405054057685494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7631705337554074447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b433487c2a6937419d0e5c8645361e8, type: 3}
+  m_Script: {fileID: 11500000, guid: c5aa79e040e67b64d816ab645341756b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TurretObject: {fileID: 11400000, guid: 115ba96a5b0c9cd40af072b6563e2307, type: 2}
@@ -1686,9 +1686,6 @@ MonoBehaviour:
   TurretMuzzle: {fileID: 4194553790059198515}
   Animator: {fileID: 6209853607382833123}
   AxisMove: 1
-  ConstAxisMove: 1
-  ConstUnitSpeed: 3
-  BuffedBy: {fileID: 0}
 --- !u!1 &8045106305722773321
 GameObject:
   m_ObjectHideFlags: 0

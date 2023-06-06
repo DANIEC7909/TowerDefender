@@ -20,52 +20,20 @@ MonoBehaviour:
   - EnemyTypesInWave:
     - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
       Amount: 20
-      SpawnTime: 0.5
+      SpawnTime: 1
     - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
       Amount: 10
-      SpawnTime: 0.8
+      SpawnTime: 1
   - EnemyTypesInWave:
     - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
       Amount: 20
-      SpawnTime: 0.2
+      SpawnTime: 1
     - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
       Amount: 10
-      SpawnTime: 0.5
+      SpawnTime: 1
     - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
       Amount: 5
-      SpawnTime: 0.7
+      SpawnTime: 1
     - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
       Amount: 5
-      SpawnTime: 0.4
-  - EnemyTypesInWave:
-    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
-      Amount: 100
-      SpawnTime: 0.2
-    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
-      Amount: 30
-      SpawnTime: 0.5
-    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
-      Amount: 5
-      SpawnTime: 0.7
-    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
-      Amount: 20
-      SpawnTime: 0.4
-    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
-      Amount: 30
-      SpawnTime: 0.4
-  - EnemyTypesInWave:
-    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
-      Amount: 250
-      SpawnTime: 0.2
-    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
-      Amount: 500
-      SpawnTime: 0.5
-    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
-      Amount: 700
-      SpawnTime: 0.7
-    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
-      Amount: 250
-      SpawnTime: 0.4
-    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
-      Amount: 250
-      SpawnTime: 0.4
+      SpawnTime: 1

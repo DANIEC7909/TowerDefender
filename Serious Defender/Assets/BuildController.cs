@@ -44,11 +44,9 @@ public class BuildController : MonoBehaviour
                         {
                             if (GameController.Instance.Money - tb.TurretObject.Price > 0)
                             {
-                                GameController.Instance.CurrentLevelScript.PlacedTurrets.Add(Instantiate(tb, hit.transform.position, Quaternion.identity));
-                              
+                                Instantiate(tb, hit.transform.position, Quaternion.identity);
                                 GameController.Instance.Money -= tb.TurretObject.Price;
                                 GameEvents.OnbuildingModeChanged_c(false);
-                                GameEvents.OnBuildingPlaced_c();
                             }
                             else
                             {
