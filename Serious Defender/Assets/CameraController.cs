@@ -10,4 +10,22 @@ public class CameraController : MonoBehaviour
         transform.position += new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime*Speed, 0, Input.GetAxis("Vertical")*Time.deltaTime*Speed);
        
     }
+    private void OnEnable()
+    {
+        GameEvents.OnGameControllerInit += SetReference;
+    }
+    private void OnDisable()
+    {
+        GameEvents.OnGameControllerInit -= SetReference;
+    }
+    private void SetReference()
+    {
+        GameController.Instance.CameraController = this;
+    }
+    public void SetCameraOnEnemy()
+    {
+      
+            transform.position = new Vector3(GameController.Instance.CurrentLevelScript.EnemySpawner.position.x, transform.position.y, GameController.Instance.CurrentLevelScript.EnemySpawner.position.z);
+    }
+
 }

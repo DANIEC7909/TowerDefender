@@ -7,16 +7,21 @@ public class LevelScript : MonoBehaviour
 {
     [SerializeField] BGCcMath SplineMath;
     public List<EnemyBase> EnemiesOnLevel = new List<EnemyBase>();
+    public List<TurretBase> TurretPlacedInLevel = new List<TurretBase>();
     public LevelObject levelObject;
     public int CurrentWave;
     public bool AllUnitsSpawned;
     [SerializeField] AudioClip LevelMusic;
+    public Transform EnemySpawner;
     public bool IsSpawning;
     private void OnEnable()
     {
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
         GameEvents.OnNextWave += GameEvents_OnNextWave;
+      
     }
+
+ 
 
     private void GameEvents_OnNextWave()
     {
@@ -26,10 +31,20 @@ public class LevelScript : MonoBehaviour
     private void OnDisable()
     {
         GameEvents.OnLevelLoaded -= GameEvents_OnLevelLoaded; GameEvents.OnNextWave -= GameEvents_OnNextWave;
+        foreach (TurretBase tb in TurretPlacedInLevel)
+        {
+            Destroy(tb.gameObject);
+        }
+        TurretPlacedInLevel.Clear();
+        GameController.Instance.Money = 5000;
     }
     private void GameEvents_OnLevelLoaded(UnityEngine.SceneManagement.Scene scene)
     {
         GameEvents.OnMusicStateChanged_c(MusicState.GAME, LevelMusic);
+        if (scene.name.Contains("Level"))
+        {
+          
+        }
     }
 
     void Start()
@@ -41,6 +56,7 @@ public class LevelScript : MonoBehaviour
             GameController.Instance.CurrentLevelSpline = SplineMath;
         }
         GameController.Instance.CurrentLevelScript = this;
+        GameController.Instance.CameraController.SetCameraOnEnemy();
     }
 
     public IEnumerator NextWave()

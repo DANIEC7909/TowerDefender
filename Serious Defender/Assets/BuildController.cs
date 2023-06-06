@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildController : MonoBehaviour
@@ -10,7 +9,7 @@ public class BuildController : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<Camera>();
-  
+
     }
     private void OnEnable()
     {
@@ -19,8 +18,8 @@ public class BuildController : MonoBehaviour
 
     private void GameEvents_OnLevelLoaded(UnityEngine.SceneManagement.Scene scene)
     {
-        if(String.Equals(scene.name,"Level1"))
-        GameController.Instance.BuildController = this;
+        if (String.Equals(scene.name, "Level1"))
+            GameController.Instance.BuildController = this;
     }
 
     private void OnDisable()
@@ -42,9 +41,10 @@ public class BuildController : MonoBehaviour
                     {
                         if (tb.TurretObject.ID == TurretID)
                         {
-                            if (GameController.Instance.Money - tb.TurretObject.Price > 0)
+                            if (GameController.Instance.Money - tb.TurretObject.Price >= 0)
                             {
-                                Instantiate(tb, hit.transform.position, Quaternion.identity);
+                                GameController.Instance.CurrentLevelScript.TurretPlacedInLevel.Add(
+                                Instantiate(tb, hit.transform.position, Quaternion.identity));
                                 GameController.Instance.Money -= tb.TurretObject.Price;
                                 GameEvents.OnbuildingModeChanged_c(false);
                             }

@@ -26,7 +26,7 @@ public class PlayerUIController : MonoBehaviour
  
     public void PlayAgain()
     {
-        Application.Quit();
+        GameEvents.OnLoadNextLevel_c();
     }
     private void GameEvents_OnGameFailed()
     {
@@ -55,9 +55,10 @@ public class PlayerUIController : MonoBehaviour
     }
     private void GameEvents_OnLevelLoaded(UnityEngine.SceneManagement.Scene scene)
     {
-        if (String.Equals(scene.name, "Level1"))
+        if (scene.name.Contains("Level"))
         {
             PlayerUI.SetActive(true);
+            WinGame.SetActive(false);
         }
     }
     public void NextWave()

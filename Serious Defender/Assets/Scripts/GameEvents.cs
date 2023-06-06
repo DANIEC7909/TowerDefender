@@ -20,6 +20,18 @@ public class GameEvents : Singleton
         OnMusicStateChanged?.Invoke(state, clip);
     }
 
+    public delegate void LoadNextLevel();
+    public static event LoadNextLevel OnLoadNextLevel;
+    public static void OnLoadNextLevel_c()
+    {
+        OnLoadNextLevel?.Invoke();
+    }
+    public delegate void GameControllerInit();
+    public static event GameControllerInit OnGameControllerInit;
+    public static void OnGameControllerInit_c()
+    {
+        OnGameControllerInit.Invoke();
+    }
     public delegate void LevelLoaded(Scene scene);
     public static event LevelLoaded OnLevelLoaded;
     public static void OnLevelLoaded_c(Scene scene)
