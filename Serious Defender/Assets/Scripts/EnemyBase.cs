@@ -11,6 +11,7 @@ public  class EnemyBase : MonoBehaviour
     public float Health;
     public bool CanAttackTowers;
     public float UnitSpeed;
+    public int Damage=5;
     public int MoneyIncreesement;
     protected void Init(BGCcMath SplineMath)
     {
@@ -58,8 +59,7 @@ public  class EnemyBase : MonoBehaviour
     {
         if (other.transform.CompareTag("PlayerGoal"))
         {
-            Application.Quit();
-            GameEvents.OnGameFailed_c();
+            GameController.Instance.AddDamage(Damage);
         }
     }
     /* private void OnTriggerEnter(Collider other)

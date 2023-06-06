@@ -19,6 +19,27 @@ public class GameEvents : Singleton
     {
         OnMusicStateChanged?.Invoke(state, clip);
     }
+    public delegate void FadeScreenIN();
+    public static event FadeScreenIN OnFadeScreenIN;
+    public static void FadeScreenIN_c()
+    {
+        OnFadeScreenIN?.Invoke();
+    }
+
+    public delegate void FadeScreenScreenCoverd();
+    public static event FadeScreenIN OnFadeScreenScreenCoverd;
+    public static void FadeScreenScreenCoverd_c()
+    {
+        OnFadeScreenScreenCoverd?.Invoke();
+    }
+
+    public delegate void FadeScreenOUT();
+    public static event FadeScreenIN OnFadeScreenOUT;
+    public static void FadeScreenOUT_c()
+    {
+        OnFadeScreenOUT?.Invoke();
+    }
+
 
     public delegate void LoadNextLevel();
     public static event LoadNextLevel OnLoadNextLevel;
@@ -31,6 +52,12 @@ public class GameEvents : Singleton
     public static void OnGameControllerInit_c()
     {
         OnGameControllerInit.Invoke();
+    }
+    public delegate void BuildingPlaced();
+    public static event BuildingPlaced OnBuildingPlaced;
+    public static void OnBuildingPlaced_c()
+    {
+        OnBuildingPlaced?.Invoke();
     }
     public delegate void LevelLoaded(Scene scene);
     public static event LevelLoaded OnLevelLoaded;

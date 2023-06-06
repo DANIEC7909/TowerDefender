@@ -8,7 +8,7 @@ public class Gnar : EnemyBase
     void Start()
     {
         Init(GameController.Instance.CurrentLevelSpline);
-        Health = 100;
+      //  Health = 100;
         CanAttackTowers = false;
     }
 

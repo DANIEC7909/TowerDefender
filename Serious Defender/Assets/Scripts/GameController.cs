@@ -16,6 +16,7 @@ public class GameController : Singleton
     public MusicManager MusicManager;
     public List<TurretBase> Turrets;
     public Scene CurrentLevel;
+    public int PlayerHp=100;
     void Start()
     {
         Init();
@@ -42,6 +43,10 @@ public class GameController : Singleton
         }
     }
     public List<Scene> ScenesInBuildIndex=new List<Scene>();
+    public void AddDamage(int Damage)
+    {
+        PlayerHp -= Damage;
+    }
     private void PrepareScens()
     {
         int scenesInBuidIndex = SceneManager.sceneCountInBuildSettings - 1;
@@ -64,6 +69,10 @@ public class GameController : Singleton
     }
     private void Update()
     {
+        if (PlayerHp <= 0)
+        {
+            GameEvents.OnGameFailed_c();
+        }
         if (Input.GetKeyDown(KeyCode.B))
         {
             BuildingMode = !BuildingMode;

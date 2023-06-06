@@ -1155,7 +1155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6712889338583459025, guid: dde8d8c73b71ea84fac70b9b72fa0314, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6712889338583459025, guid: dde8d8c73b71ea84fac70b9b72fa0314, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1776,7 +1776,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1268853515}
   - component: {fileID: 1268853514}
-  - component: {fileID: 1268853513}
   - component: {fileID: 1268853512}
   m_Layer: 0
   m_Name: Camera
@@ -1805,14 +1804,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!81 &1268853513
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268853511}
-  m_Enabled: 1
 --- !u!20 &1268853514
 Camera:
   m_ObjectHideFlags: 0
@@ -2441,7 +2432,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1754776887
 GameObject:
@@ -2673,7 +2664,7 @@ RectTransform:
   - {fileID: 2060619895}
   - {fileID: 1019611009}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2722,7 +2713,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1780926228
 PrefabInstance:

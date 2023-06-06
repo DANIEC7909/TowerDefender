@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUIController : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerUIController : MonoBehaviour
     [SerializeField] GameObject NextWaveBtn;
     [SerializeField] GameObject FailedGame;
     [SerializeField] GameObject WinGame;
-    
+    [SerializeField] Image HpFill;
     private void OnEnable()
     {
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
@@ -36,7 +37,11 @@ public class PlayerUIController : MonoBehaviour
 
     private void Update()
     {
-        if (Money != null)
+        if (GameController.Instance && HpFill)
+        {
+            HpFill.fillAmount =  Mathf.InverseLerp(0,100, GameController.Instance.PlayerHp) ;
+        }
+            if (Money != null)
         {
             Money.text = GameController.Instance.Money.ToString();
         }
