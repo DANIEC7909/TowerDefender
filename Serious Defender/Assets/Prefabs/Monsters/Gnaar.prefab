@@ -117,7 +117,7 @@ MonoBehaviour:
   ActualCurveDistance: 0
   Health: 111
   CanAttackTowers: 0
-  UnitSpeed: 3
+  UnitSpeed: 9
   MoneyIncreesement: 50
 --- !u!54 &4803001756966746713
 Rigidbody:

@@ -115,9 +115,9 @@ MonoBehaviour:
   currentSplineMathComponent: {fileID: 0}
   CurveDistance: 0
   ActualCurveDistance: 0
-  Health: 111
+  Health: 150
   CanAttackTowers: 0
-  UnitSpeed: 3
+  UnitSpeed: 16
   MoneyIncreesement: 100
 --- !u!54 &-5572427695307867002
 Rigidbody:

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d83dd8cf5024f1489d6179d7a05d0ad, type: 3}
+  m_Name: FirstLevelData 2
+  m_EditorClassIdentifier: 
+  WaveScenario:
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 20
+      SpawnTime: 1
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 70
+      SpawnTime: 0.4
+    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
+      Amount: 5
+      SpawnTime: 0.4
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
+      Amount: 50
+      SpawnTime: 0.6
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 80
+      SpawnTime: 0.4
+    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
+      Amount: 20
+      SpawnTime: 0.4
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 20
+      SpawnTime: 0.5
+    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
+      Amount: 10
+      SpawnTime: 0.5
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 50
+      SpawnTime: 1
+    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
+      Amount: 60
+      SpawnTime: 1
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 40
+      SpawnTime: 0.5
+    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
+      Amount: 30
+      SpawnTime: 0.5
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 100
+      SpawnTime: 0.6
+    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
+      Amount: 70
+      SpawnTime: 0.7
+  - EnemyTypesInWave:
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 80
+      SpawnTime: 0.9
+    - Type: {fileID: 8859515068558934133, guid: fc38d3c9b04c0c04fb439e63b84a4a50, type: 3}
+      Amount: 100
+      SpawnTime: 0.4
+    - Type: {fileID: 8859515068558934133, guid: 39acca38cb260fb46a26b04c24e1642b, type: 3}
+      Amount: 90
+      SpawnTime: 0.5
+    - Type: {fileID: 8859515068558934133, guid: 3e6cbadfd76006b4d8bd9318e8b62d08, type: 3}
+      Amount: 70
+      SpawnTime: 0.7
