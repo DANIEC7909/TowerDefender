@@ -12,4 +12,5 @@ public class TurretObject : ScriptableObject
     public float AttackRange;
     public Projectile Projectile;
     public int ID;
+    public Sprite ButtonIMG;
 }

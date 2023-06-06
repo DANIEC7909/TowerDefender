@@ -27335,6 +27335,7 @@ MonoBehaviour:
   SplineMath: {fileID: 919592450}
   EnemiesOnLevel: []
   levelObject: {fileID: 11400000, guid: 14498a7b4d441634681424065b9001f7, type: 2}
+  PlacedTurrets: []
   CurrentWave: 0
   AllUnitsSpawned: 0
   LevelMusic: {fileID: 8300000, guid: 10948d9f5d3033249ac2c09d52117de4, type: 3}

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,13 +7,17 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] RectTransform TurretsList;
     [SerializeField] Button TurretButton;
-    [SerializeField] List<GameObject> TurretsButtons=new List<GameObject>();
+    [SerializeField] List<GameObject> TurretsButtons = new List<GameObject>();
     public void ShowTurrets()
     {
-        foreach(TurretBase tb in GameController.Instance.Turrets)
+        foreach (TurretBase tb in GameController.Instance.Turrets)
         {
-           Button btn = Instantiate(TurretButton, TurretsList);
-            btn.GetComponentInChildren<TextMeshProUGUI>().text = tb.name;
+            Button btn = Instantiate(TurretButton, TurretsList);
+            if (tb.TurretObject.ButtonIMG)
+            {
+                btn.GetComponent<Image>().sprite = tb.TurretObject.ButtonIMG;
+            }
+            //btn.GetComponentInChildren<TextMeshProUGUI>().text = tb.name;
             btn.onClick.AddListener(() => SelectTurret(tb.TurretObject.ID));
             TurretsButtons.Add(btn.gameObject);
         }
@@ -26,8 +29,8 @@ public class Shop : MonoBehaviour
     }
     public void ClearContailer()
     {
-    
-        foreach(GameObject rt in TurretsButtons)
+
+        foreach (GameObject rt in TurretsButtons)
         {
             Destroy(rt);
         }
