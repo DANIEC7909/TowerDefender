@@ -29,11 +29,20 @@ public class GameController : Singleton
     {
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
         GameEvents.OnLoadNextLevel += LoadNextLevel;
+        GameEvents.OnMissle += GameEvents_OnMissle;
     }
+
+
     private void OnDisable()
     {
         GameEvents.OnLevelLoaded -= GameEvents_OnLevelLoaded;
-        GameEvents.OnLoadNextLevel -= LoadNextLevel;
+        GameEvents.OnLoadNextLevel -= LoadNextLevel; 
+        GameEvents.OnMissle -= GameEvents_OnMissle;
+    }
+    private void GameEvents_OnMissle()
+    {
+        Money -= 500;
+        CurrentLevelScript.missle.gameObject.SetActive(true);
     }
     private void GameEvents_OnLevelLoaded(UnityEngine.SceneManagement.Scene scene)
     {

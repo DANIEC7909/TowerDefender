@@ -29,6 +29,10 @@ public class PlayerUIController : MonoBehaviour
     {
         GameEvents.OnLoadNextLevel_c();
     }
+    public void OnMissleActivated()
+    {
+        GameEvents.OnMissle_c();
+    }
     private void GameEvents_OnGameFailed()
     {
         FailedGame.SetActive(true);

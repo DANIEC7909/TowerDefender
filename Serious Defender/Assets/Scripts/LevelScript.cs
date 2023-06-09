@@ -8,6 +8,7 @@ public class LevelScript : MonoBehaviour
     [SerializeField] BGCcMath SplineMath;
     public List<EnemyBase> EnemiesOnLevel = new List<EnemyBase>();
     public List<TurretBase> TurretPlacedInLevel = new List<TurretBase>();
+    public Missle missle;
     public LevelObject levelObject;
     public int CurrentWave;
     public bool AllUnitsSpawned;

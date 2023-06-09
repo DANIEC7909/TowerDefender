@@ -5267,6 +5267,7 @@ MonoBehaviour:
   SplineMath: {fileID: 919592450}
   EnemiesOnLevel: []
   TurretPlacedInLevel: []
+  missle: {fileID: 5655541265019324190}
   levelObject: {fileID: 11400000, guid: 14498a7b4d441634681424065b9001f7, type: 2}
   CurrentWave: 0
   AllUnitsSpawned: 0
@@ -7374,3 +7375,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2697658980754420667, guid: 55672d3ec17317842ae54d728d51f76d, type: 3}
   m_PrefabInstance: {fileID: 2697658979388186745}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5655541265019324189
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9885536
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15087053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 17.355
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395486295456781910, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941659621598329033, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+      propertyPath: m_Name
+      value: MissleCrosshair
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+--- !u!114 &5655541265019324190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2161000330276984081, guid: 00e38ef1b647ada4687897b3ed40a670, type: 3}
+  m_PrefabInstance: {fileID: 5655541265019324189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d497761d600cd8b459de3418c3240a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

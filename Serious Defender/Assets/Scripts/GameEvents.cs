@@ -66,6 +66,13 @@ public class GameEvents : Singleton
         OnLevelLoaded?.Invoke(scene);
     }
 
+    public delegate void Missle();
+    public static event Missle OnMissle;
+    public static void OnMissle_c()
+    {
+        OnMissle?.Invoke();
+    }
+
     public delegate void NextWave();
     public static event NextWave OnNextWave;
     public static void OnNextWave_c()
