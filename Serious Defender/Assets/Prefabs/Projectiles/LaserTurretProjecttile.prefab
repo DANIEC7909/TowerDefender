@@ -262,7 +262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6956810975590914199, guid: eb4d98049cca9c649952494657eac99f, type: 3}
       propertyPath: Damage
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956810975590914199, guid: eb4d98049cca9c649952494657eac99f, type: 3}
+      propertyPath: IsPassThroug
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6956810975590914193, guid: eb4d98049cca9c649952494657eac99f, type: 3}

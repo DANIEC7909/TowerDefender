@@ -20,7 +20,7 @@ public  class EnemyBase : MonoBehaviour
         currentSplineMathComponent = SplineMath;
         CurveDistance = currentSplineMathComponent.GetDistance();
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Add(this);
-        diedHash = Animator.StringToHash("Died");
+       // diedHash = Animator.StringToHash("Died");
     }
     public void DealDamage(int dmg)
     {
@@ -42,7 +42,8 @@ public  class EnemyBase : MonoBehaviour
     {
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Remove(this);
         GameController.Instance.Money += MoneyIncreesement;
-        anim.SetTrigger(diedHash);
+        Died();
+        //  anim.SetTrigger(diedHash); 
     }
     protected void MoveBySpline(float speed)
     {

@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
             {
                 btn.GetComponent<Image>().sprite = tb.TurretObject.ButtonIMG;
             }
-            //btn.GetComponentInChildren<TextMeshProUGUI>().text = tb.name;
+            btn.GetComponentInChildren<TextMeshProUGUI>().text ="$"+ tb.TurretObject.Price.ToString();
             btn.onClick.AddListener(() => SelectTurret(tb.TurretObject.ID));
             TurretsButtons.Add(btn.gameObject);
         }

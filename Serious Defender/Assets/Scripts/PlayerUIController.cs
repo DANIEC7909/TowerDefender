@@ -74,6 +74,10 @@ public class PlayerUIController : MonoBehaviour
     {
         GameEvents.OnNextWave_c();
     }
+    public void NextLevel()
+    {
+        GameEvents.OnLoadNextLevel_c();
+    }
     private void OnDisable()
     {
         GameEvents.OnGameFailed -= GameEvents_OnGameFailed;

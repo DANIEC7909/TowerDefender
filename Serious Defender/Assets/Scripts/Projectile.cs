@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] string AttackTag;
     public int Damage;
     public Transform target;
+    [SerializeField] bool IsPassThroug;
     void FixedUpdate()
     {
         rb.AddForce(Direction * Speed);
@@ -24,7 +25,10 @@ public class Projectile : MonoBehaviour
         if (other.transform.CompareTag(AttackTag))
         {
             other.transform.GetComponent<EnemyBase>().DealDamage(Damage);
-          
+            if (!IsPassThroug)
+            {
+                Destroy(gameObject);
+            } 
         }
     }
 }

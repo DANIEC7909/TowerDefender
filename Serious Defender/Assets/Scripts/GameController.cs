@@ -76,6 +76,10 @@ public class GameController : Singleton
         //fade-off
         }
     }
+    public void TryAgain()
+    {
+
+    }
     private void Update()
     {
         if (PlayerHp <= 0)

@@ -16,7 +16,7 @@ MonoBehaviour:
   Health: 10
   Damage: 5
   ShootCoolDown: 0.5
-  AttackRange: 30
+  AttackRange: 45
   Projectile: {fileID: 2128709621407444732, guid: ceb9288bc0c686a46b4a5739a2fe77ae, type: 3}
   ID: 1
   ButtonIMG: {fileID: 21300000, guid: 8ab551435bfe50a4c923348fefd8b78f, type: 3}

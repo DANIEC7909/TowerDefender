@@ -1172,7 +1172,7 @@ Transform:
   m_GameObject: {fileID: 8859515068558934132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1621270542664344583}
@@ -1212,6 +1212,7 @@ MonoBehaviour:
   CanAttackTowers: 0
   UnitSpeed: 9
   Damage: 5
+  anim: {fileID: 0}
   MoneyIncreesement: 50
 --- !u!54 &4803001756966746713
 Rigidbody:
@@ -1227,7 +1228,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!1 &8966716935982046455
 GameObject:
