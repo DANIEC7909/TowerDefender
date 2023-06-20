@@ -12,12 +12,15 @@ public  class EnemyBase : MonoBehaviour
     public bool CanAttackTowers;
     public float UnitSpeed;
     public int Damage=5;
+    public Animator anim;
+    int diedHash;
     public int MoneyIncreesement;
     protected void Init(BGCcMath SplineMath)
     {
         currentSplineMathComponent = SplineMath;
         CurveDistance = currentSplineMathComponent.GetDistance();
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Add(this);
+        diedHash = Animator.StringToHash("Died");
     }
     public void DealDamage(int dmg)
     {
@@ -31,18 +34,21 @@ public  class EnemyBase : MonoBehaviour
             KillUnit();
         }
     }
+    public void Died()
+    {
+        Destroy(gameObject);
+    }
     protected void KillUnit()
     {
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Remove(this);
         GameController.Instance.Money += MoneyIncreesement;
-        Destroy(gameObject);
+        anim.SetTrigger(diedHash);
     }
     protected void MoveBySpline(float speed)
     {
         if (ActualCurveDistance < CurveDistance)
         {
           
-
             ActualCurveDistance += (speed*Time.deltaTime);
             if (ActualCurveDistance >= CurveDistance)
             {
