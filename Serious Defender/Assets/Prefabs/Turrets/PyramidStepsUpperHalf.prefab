@@ -112,7 +112,7 @@ MonoBehaviour:
   ConstAxisMove: 1
   ConstUnitSpeed: 3
   BuffedBy: {fileID: 0}
-  DistanceToBuffedTurrets: 0
+  DistanceToBuffedTurrets: 40
   BuffedTurrets: []
 --- !u!1 &8827120828219559518
 GameObject:

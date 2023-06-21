@@ -8,11 +8,14 @@ public class TurretBase : MonoBehaviour
     public int Health;
     public float ShootingCooldown;
     private float localShootingCooldown;
-    public int Damage;
+    public float Damage;
     public float AtackRange;
     public EnemyBase Target;
     public bool IsActive;
     public Projectile Projectile;
+
+    public bool IsInited { get; private set; }
+
     public Transform TurretHead;
     public Transform TurretMuzzle;
     public Animator Animator;
@@ -20,6 +23,7 @@ public class TurretBase : MonoBehaviour
     public float  ConstAxisMove = 1;
     public float ConstUnitSpeed = 3;
     public PiramidTurret BuffedBy;
+    public GameObject LevelUpIcon;
     public void ObtainTarget()
     {
         int id = -1;
@@ -46,7 +50,7 @@ public class TurretBase : MonoBehaviour
         }
         foreach (EnemyBase eb in EnemiesInRange)
         {
-            if (Vector3.Distance(transform.position, eb.transform.position) < lastDistance)
+            if (Vector3.Distance(transform.position, eb.transform.position) < lastDistance && eb.IsKilled==false)
             {
                 lastDistance = Vector3.Distance(transform.position, eb.transform.position);
                 LocalTarget = eb;
@@ -62,6 +66,7 @@ public class TurretBase : MonoBehaviour
     {
         Projectile lp = Instantiate(Projectile, TurretMuzzle.position, Quaternion.identity);
         lp.Direction = TurretMuzzle.forward;
+        lp.Damage = Damage;
         lp.target = Target.transform;
         if (Animator != null)
         {
@@ -70,12 +75,24 @@ public class TurretBase : MonoBehaviour
     }
     protected void Init()
     {
-        Health = TurretObject.Health;
-        Damage = TurretObject.Damage;
-        ShootingCooldown = TurretObject.ShootCoolDown;
-        ShootingCooldown = TurretObject.ShootCoolDown;
-        AtackRange = TurretObject.AttackRange;
-        Projectile = TurretObject.Projectile;
+        if (!IsInited)
+        {
+            Health = TurretObject.Health;
+            Damage = TurretObject.Damage;
+            ShootingCooldown = TurretObject.ShootCoolDown;
+            ShootingCooldown = TurretObject.ShootCoolDown;
+            AtackRange = TurretObject.AttackRange;
+            Projectile = TurretObject.Projectile;
+            IsInited = true;
+        }
+    }
+    public void BuffEnemy()
+    {
+        Init();
+        ShootingCooldown -=0.02f;
+        Damage += (Projectile.Damage*1.1f);
+        AtackRange += 5;
+        LevelUpIcon.SetActive(true);
     }
     protected void Tick()
     {
@@ -85,7 +102,8 @@ public class TurretBase : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(transform.position, Target.transform.position) > AtackRange)
+
+            if (Vector3.Distance(transform.position, Target.transform.position) > AtackRange|| Target.IsKilled)
             {
                 ObtainTarget();
             }
@@ -95,7 +113,7 @@ public class TurretBase : MonoBehaviour
             {
                 Vector3 pos =Target.currentSplineMathComponent.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, Target.ActualCurveDistance + AxisMove);
                 Vector3 pos2 = new Vector3(pos.x, Target.transform.position.y, pos.z);
-                TurretHead.LookAt(pos2);
+                TurretHead.LookAt(pos2+(Vector3.up*2));
 
                 localShootingCooldown += Time.deltaTime;
                 if (localShootingCooldown > ShootingCooldown)

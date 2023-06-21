@@ -12,6 +12,7 @@ public  class EnemyBase : MonoBehaviour
     public bool CanAttackTowers;
     public float UnitSpeed;
     public int Damage=5;
+   public bool IsKilled;
     public Animator anim;
     int diedHash;
     public int MoneyIncreesement;
@@ -20,16 +21,16 @@ public  class EnemyBase : MonoBehaviour
         currentSplineMathComponent = SplineMath;
         CurveDistance = currentSplineMathComponent.GetDistance();
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Add(this);
-       // diedHash = Animator.StringToHash("Died");
+        diedHash = Animator.StringToHash("Died");
     }
-    public void DealDamage(int dmg)
+    public void DealDamage(float dmg)
     {
         Health -= dmg;
     }
     public void Tick()
     {
         MoveBySpline(UnitSpeed);
-        if (Health <= 0)
+        if (Health <= 0 && IsKilled==false)
         {
             KillUnit();
         }
@@ -42,20 +43,24 @@ public  class EnemyBase : MonoBehaviour
     {
         GameController.Instance.CurrentLevelScript.EnemiesOnLevel.Remove(this);
         GameController.Instance.Money += MoneyIncreesement;
-        Died();
-        //  anim.SetTrigger(diedHash); 
+        IsKilled = true;
+          anim.SetTrigger(diedHash); 
     }
     protected void MoveBySpline(float speed)
     {
-        if (ActualCurveDistance < CurveDistance)
+        if (!IsKilled)
         {
-          
-            ActualCurveDistance += (speed*Time.deltaTime);
-            if (ActualCurveDistance >= CurveDistance)
+            if (ActualCurveDistance < CurveDistance)
             {
-                ActualCurveDistance = 0;
+
+                ActualCurveDistance += (speed * Time.deltaTime);
+                if (ActualCurveDistance >= CurveDistance)
+                {
+                    ActualCurveDistance = 0;
+                }
+                transform.position = currentSplineMathComponent.CalcPositionByDistance(ActualCurveDistance) + new Vector3(0, 1);
+                transform.rotation = Quaternion.LookRotation(currentSplineMathComponent.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Tangent, ActualCurveDistance));
             }
-          transform.position=  currentSplineMathComponent.CalcPositionByDistance(ActualCurveDistance)+new Vector3(0,2);
         }
     }
     protected void Attack()

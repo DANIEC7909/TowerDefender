@@ -14,15 +14,24 @@ public class LevelScript : MonoBehaviour
     public bool AllUnitsSpawned;
     [SerializeField] AudioClip LevelMusic;
     public Transform EnemySpawner;
+    float SplineDistance;
+    Vector3 firstCameraPos;
     public bool IsSpawning;
     private void OnEnable()
     {
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
         GameEvents.OnNextWave += GameEvents_OnNextWave;
-      
-    }
+        GameEvents.OnFadeScreenOUT += GameEvents_OnFadeScreenOUT;    
 
- 
+        
+    }
+    
+    private void GameEvents_OnFadeScreenOUT()
+    {
+        GameController.Instance.PathShowInProgress = true;
+        SplineDistance = SplineMath.GetDistance();
+        firstCameraPos = GameController.Instance.CameraController.transform.position;
+    }
 
     private void GameEvents_OnNextWave()
     {
@@ -47,7 +56,46 @@ public class LevelScript : MonoBehaviour
           
         }
     }
+    float pathShowingProgress;
+    
+    float homeCameraLerp;
+    Vector3 LastPosition;
+    
+    private void FixedUpdate()
+    {
+        if (Input.anyKey)
+        {
+       /*     GameController.Instance.PathShowInProgress = false;
+            GameController.Instance.CameraController.transform.position= firstCameraPos;*/
+        }
+        else
+        {
 
+        if (GameController.Instance.PathShowInProgress&& GameController.Instance.CameraController)
+        {
+            if (pathShowingProgress < SplineDistance)
+            {
+                pathShowingProgress += Time.deltaTime * 80;
+                Vector3 pos = SplineMath.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, pathShowingProgress);
+                LastPosition= new Vector3(pos.x, GameController.Instance.CameraController.transform.position.y, pos.z);
+                GameController.Instance.CameraController.transform.position = LastPosition;
+            }
+            else
+            {
+                if (homeCameraLerp < 1)
+                {
+                    homeCameraLerp += Time.deltaTime;
+                    GameController.Instance.CameraController.transform.position = Vector3.Lerp(LastPosition, firstCameraPos, homeCameraLerp);
+                }
+                else { 
+                GameController.Instance.PathShowInProgress = false;
+                }
+               
+            }
+        }
+
+        }
+    }
     void Start()
     {
         GameEvents.OnLevelLoaded_c(gameObject.scene);
@@ -58,6 +106,9 @@ public class LevelScript : MonoBehaviour
         }
         GameController.Instance.CurrentLevelScript = this;
         GameController.Instance.CameraController.SetCameraOnEnemy();
+        Vector3 pos = SplineMath.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, 0);
+         
+        GameController.Instance.CameraController.transform.position= new Vector3(pos.x, GameController.Instance.CameraController.transform.position.y, pos.z);
     }
 
     public IEnumerator NextWave()

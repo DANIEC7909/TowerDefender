@@ -17,6 +17,7 @@ public class GameController : Singleton
     public List<TurretBase> Turrets;
     public Scene CurrentLevel;
     public int PlayerHp=100;
+    public bool PathShowInProgress;
     void Start()
     {
         Init();
@@ -30,14 +31,21 @@ public class GameController : Singleton
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
         GameEvents.OnLoadNextLevel += LoadNextLevel;
         GameEvents.OnMissle += GameEvents_OnMissle;
+        GameEvents.OnFadeScreenOUT += GameEvents_OnFadeScreenOUT;
     }
 
+    private void GameEvents_OnFadeScreenOUT()
+    {
+        /*SceneManager.LoadSceneAsync(CurrentLevel.buildIndex + 1, LoadSceneMode.Additive);
+        SceneManager.UnloadScene(CurrentLevel.buildIndex);*/
+    }
 
     private void OnDisable()
     {
         GameEvents.OnLevelLoaded -= GameEvents_OnLevelLoaded;
         GameEvents.OnLoadNextLevel -= LoadNextLevel; 
         GameEvents.OnMissle -= GameEvents_OnMissle;
+        GameEvents.OnFadeScreenOUT -= GameEvents_OnFadeScreenOUT;
     }
     private void GameEvents_OnMissle()
     {
@@ -71,10 +79,16 @@ public class GameController : Singleton
         if (CurrentLevel.buildIndex <= 4)
         {
             //fade-in
-            SceneManager.LoadSceneAsync(CurrentLevel.buildIndex+1, LoadSceneMode.Additive);
-            SceneManager.UnloadScene(CurrentLevel.buildIndex);
+            GameEvents.FadeScreenIN_c();
+            StartCoroutine(ChangeLevel());
         //fade-off
         }
+    }
+    IEnumerator ChangeLevel()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadSceneAsync(CurrentLevel.buildIndex + 1, LoadSceneMode.Additive);
+        SceneManager.UnloadScene(CurrentLevel.buildIndex);
     }
     public void TryAgain()
     {

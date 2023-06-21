@@ -5,6 +5,9 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -4791504522942941401
+    second: Gnaar_Running
+  - first:
+      74: -4791504522942941401
     second: Armature|Armature|mixamo.com|Layer0
   externalObjects: {}
   materials:

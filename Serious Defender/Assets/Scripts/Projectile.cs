@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public Vector3 Direction;
     public float Speed;
     [SerializeField] string AttackTag;
-    public int Damage;
+    public float Damage;
     public Transform target;
     [SerializeField] bool IsPassThroug;
     void FixedUpdate()
