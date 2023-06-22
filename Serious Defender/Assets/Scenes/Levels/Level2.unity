@@ -34567,6 +34567,7 @@ MonoBehaviour:
   AllUnitsSpawned: 0
   LevelMusic: {fileID: 8300000, guid: 10948d9f5d3033249ac2c09d52117de4, type: 3}
   EnemySpawner: {fileID: 1802929872}
+  Money: 8000
   IsSpawning: 0
 --- !u!4 &1511027447
 Transform:

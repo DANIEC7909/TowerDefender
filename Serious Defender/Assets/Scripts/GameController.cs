@@ -49,7 +49,7 @@ public class GameController : Singleton
     }
     private void GameEvents_OnMissle()
     {
-        Money -= 500;
+     
         CurrentLevelScript.missle.gameObject.SetActive(true);
     }
     private void GameEvents_OnLevelLoaded(UnityEngine.SceneManagement.Scene scene)

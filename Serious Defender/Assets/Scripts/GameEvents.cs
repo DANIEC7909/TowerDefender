@@ -13,11 +13,11 @@ public class GameEvents : Singleton
     }
 
 
-    public delegate void MusicStateChanged(MusicState state,AudioClip clip=null);
+    public delegate void MusicStateChanged(MusicState state);
     public static event MusicStateChanged OnMusicStateChanged;
-    public static void OnMusicStateChanged_c(MusicState state,AudioClip clip =null)
+    public static void OnMusicStateChanged_c(MusicState state)
     {
-        OnMusicStateChanged?.Invoke(state, clip);
+        OnMusicStateChanged?.Invoke(state);
     }
     public delegate void FadeScreenIN();
     public static event FadeScreenIN OnFadeScreenIN;

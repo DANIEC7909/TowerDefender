@@ -3410,6 +3410,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   as_Music: {fileID: 1587343713}
   ac_Menu: {fileID: 8300000, guid: abc707a5b0e974c40a59671d20f2d1d1, type: 3}
+  ac_Music:
+  - {fileID: 8300000, guid: 10948d9f5d3033249ac2c09d52117de4, type: 3}
+  - {fileID: 8300000, guid: 916246f1b7fbb784dae5930c6ec5a850, type: 3}
+  - {fileID: 8300000, guid: 66fdebc5163c2664b80f665d23f104d2, type: 3}
+  - {fileID: 8300000, guid: 92345ad096d0a3144b48c7bb66d7191b, type: 3}
+  State: 0
 --- !u!82 &1587343713 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 473987185, guid: 7494501ade937e64fae62eaef89af917, type: 3}

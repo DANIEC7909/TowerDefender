@@ -7,7 +7,8 @@ public class MusicManager : MonoBehaviour
 {
     [SerializeField] AudioSource as_Music;
     [SerializeField] AudioClip ac_Menu;
-    
+    [SerializeField] AudioClip[] ac_Music;
+    [SerializeField] MusicState State;
     private void OnEnable()
     {
         GameEvents.OnMusicStateChanged += GameEvents_OnMusicStateChanged;
@@ -16,7 +17,15 @@ public class MusicManager : MonoBehaviour
     {
         GameController.Instance.MusicManager = this;
     }
-    private void GameEvents_OnMusicStateChanged(MusicState state,AudioClip clip)
+    public void Update()
+    {
+        if(State == MusicState.GAME&& !as_Music.isPlaying)
+        {
+            as_Music.clip = ac_Music[Random.Range(0, ac_Music.Length - 1)];
+            as_Music.Play();
+        }
+    }
+    private void GameEvents_OnMusicStateChanged(MusicState state)
     {
         switch (state)
         {
@@ -24,14 +33,16 @@ public class MusicManager : MonoBehaviour
                 if (as_Music != null&&ac_Menu!=null) {
                     as_Music.clip = ac_Menu;
                     as_Music.Play();
+                    State = MusicState.MENU;
                 }
                 break;
 
             case MusicState.GAME:
                 if (as_Music != null && ac_Menu != null)
                 {
-                    as_Music.clip = clip;
+                    as_Music.clip = ac_Music[Random.Range(0, ac_Music.Length-1)];
                     as_Music.Play();
+                    State = MusicState.GAME;
                 }
                 break;
         }

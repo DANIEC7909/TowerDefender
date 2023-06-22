@@ -27409,6 +27409,7 @@ MonoBehaviour:
   AllUnitsSpawned: 0
   LevelMusic: {fileID: 8300000, guid: 10948d9f5d3033249ac2c09d52117de4, type: 3}
   EnemySpawner: {fileID: 1802929872}
+  Money: 10000
   IsSpawning: 0
 --- !u!4 &1511027447
 Transform:
@@ -30004,7 +30005,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1627573529
 PrefabInstance:

@@ -27,6 +27,8 @@ public class Missle : MonoBehaviour
             transform.position = hit.point+Vector3.up;
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+
+                GameController.Instance.Money -= 500;
                 Instantiate(PainVolume, transform.position, Quaternion.identity);
                 gameObject.SetActive(false);
             }

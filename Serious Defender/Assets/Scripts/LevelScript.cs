@@ -16,14 +16,15 @@ public class LevelScript : MonoBehaviour
     public Transform EnemySpawner;
     float SplineDistance;
     Vector3 firstCameraPos;
+    public int Money = 5000;
     public bool IsSpawning;
     private void OnEnable()
     {
         GameEvents.OnLevelLoaded += GameEvents_OnLevelLoaded;
         GameEvents.OnNextWave += GameEvents_OnNextWave;
-        GameEvents.OnFadeScreenOUT += GameEvents_OnFadeScreenOUT;    
+        GameEvents.OnFadeScreenOUT += GameEvents_OnFadeScreenOUT;
 
-        
+        GameController.Instance.Money = Money;
     }
     
     private void GameEvents_OnFadeScreenOUT()
@@ -46,11 +47,11 @@ public class LevelScript : MonoBehaviour
             Destroy(tb.gameObject);
         }
         TurretPlacedInLevel.Clear();
-        GameController.Instance.Money = 5000;
+
     }
     private void GameEvents_OnLevelLoaded(UnityEngine.SceneManagement.Scene scene)
     {
-        GameEvents.OnMusicStateChanged_c(MusicState.GAME, LevelMusic);
+        GameEvents.OnMusicStateChanged_c(MusicState.GAME);
         if (scene.name.Contains("Level"))
         {
           

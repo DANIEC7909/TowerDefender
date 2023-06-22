@@ -31,7 +31,12 @@ public class PlayerUIController : MonoBehaviour
     }
     public void OnMissleActivated()
     {
-        GameEvents.OnMissle_c();
+        if (GameController.Instance.Money-500>0)
+        {
+
+            GameEvents.OnMissle_c();
+        }
+        Debug.Log("Missle activated");
     }
     private void GameEvents_OnGameFailed()
     {
