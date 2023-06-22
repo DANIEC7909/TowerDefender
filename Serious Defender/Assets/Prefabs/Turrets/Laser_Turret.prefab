@@ -1634,8 +1634,8 @@ MonoBehaviour:
   TurretMuzzle: {fileID: 4194553790059198515}
   Animator: {fileID: 0}
   AxisMove: 0
-  ConstAxisMove: 1
-  ConstUnitSpeed: 3
+  ConstAxisMove: 3
+  ConstUnitSpeed: 9
   BuffedBy: {fileID: 0}
   LevelUpIcon: {fileID: 1492999537953220104}
 --- !u!1 &7722480497295224536

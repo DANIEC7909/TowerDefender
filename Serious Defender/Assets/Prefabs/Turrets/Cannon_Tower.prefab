@@ -1770,8 +1770,8 @@ MonoBehaviour:
   TurretMuzzle: {fileID: 4194553790059198515}
   Animator: {fileID: 6209853607382833123}
   AxisMove: 0
-  ConstAxisMove: 1
-  ConstUnitSpeed: 3
+  ConstAxisMove: 3
+  ConstUnitSpeed: 9
   BuffedBy: {fileID: 0}
   LevelUpIcon: {fileID: 8840477141920581236}
 --- !u!1 &8045106305722773321

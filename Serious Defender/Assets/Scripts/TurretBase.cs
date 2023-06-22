@@ -21,7 +21,7 @@ public class TurretBase : MonoBehaviour
     public Animator Animator;
     public float AxisMove;
     public float  ConstAxisMove = 1;
-    public float ConstUnitSpeed = 3;
+    public float ConstUnitSpeed = 9;
     public PiramidTurret BuffedBy;
     public GameObject LevelUpIcon;
     public void ObtainTarget()
@@ -60,13 +60,16 @@ public class TurretBase : MonoBehaviour
 
         float k = ConstAxisMove / ConstUnitSpeed;
         AxisMove = k * Target.UnitSpeed;
-       Debug.Log(AxisMove);
+      
     }
     public void Shoot()
     {
         Projectile lp = Instantiate(Projectile, TurretMuzzle.position, Quaternion.identity);
         lp.Direction = TurretMuzzle.forward;
+        if (Damage > 0)
+        {
         lp.Damage = Damage;
+        }
         lp.target = Target.transform;
         if (Animator != null)
         {
@@ -77,8 +80,8 @@ public class TurretBase : MonoBehaviour
     {
         if (!IsInited)
         {
-            Health = TurretObject.Health;
-            Damage = TurretObject.Damage;
+       /*     Health = TurretObject.Health;
+            Damage = Projectile.Damage;*/
             ShootingCooldown = TurretObject.ShootCoolDown;
             ShootingCooldown = TurretObject.ShootCoolDown;
             AtackRange = TurretObject.AttackRange;
@@ -86,11 +89,11 @@ public class TurretBase : MonoBehaviour
             IsInited = true;
         }
     }
-    public void BuffEnemy()
+    public void BuffTurret()
     {
         Init();
         ShootingCooldown -=0.02f;
-        Damage += (Projectile.Damage*1.1f);
+        Damage = (Projectile.Damage*1.5f);
         AtackRange += 5;
         LevelUpIcon.SetActive(true);
     }
@@ -111,6 +114,7 @@ public class TurretBase : MonoBehaviour
        
             if (IsActive)
             {
+                
                 Vector3 pos =Target.currentSplineMathComponent.CalcByDistance(BansheeGz.BGSpline.Curve.BGCurveBaseMath.Field.Position, Target.ActualCurveDistance + AxisMove);
                 Vector3 pos2 = new Vector3(pos.x, Target.transform.position.y, pos.z);
                 TurretHead.LookAt(pos2+(Vector3.up*2));

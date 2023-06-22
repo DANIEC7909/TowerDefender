@@ -86,7 +86,7 @@ public class GameController : Singleton
     }
     IEnumerator ChangeLevel()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
         SceneManager.LoadSceneAsync(CurrentLevel.buildIndex + 1, LoadSceneMode.Additive);
         SceneManager.UnloadScene(CurrentLevel.buildIndex);
     }

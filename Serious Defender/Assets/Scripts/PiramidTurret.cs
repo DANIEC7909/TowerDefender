@@ -35,7 +35,7 @@ public class PiramidTurret : TurretBase
            
             turretBase.BuffedBy = this;
             BuffedTurrets.Add(turretBase);
-            turretBase.BuffEnemy();
+            turretBase.BuffTurret();
         }
     }
     private void OnDestroy()

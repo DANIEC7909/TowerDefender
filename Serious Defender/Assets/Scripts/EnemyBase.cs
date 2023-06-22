@@ -29,11 +29,14 @@ public  class EnemyBase : MonoBehaviour
     }
     public void Tick()
     {
-        MoveBySpline(UnitSpeed);
-        if (Health <= 0 && IsKilled==false)
+        if (Health <= 0 && !IsKilled)
         {
             KillUnit();
         }
+     
+        MoveBySpline(UnitSpeed);
+
+     
     }
     public void Died()
     {
