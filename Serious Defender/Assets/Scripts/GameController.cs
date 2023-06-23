@@ -18,6 +18,7 @@ public class GameController : Singleton
     public Scene CurrentLevel;
     public int PlayerHp=100;
     public bool PathShowInProgress;
+    public bool IsPointerOverUI;
     void Start()
     {
         Init();

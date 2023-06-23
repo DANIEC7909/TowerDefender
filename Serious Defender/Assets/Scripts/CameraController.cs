@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     
     void Update()
     {
-        transform.position += new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime*Speed, 0, Input.GetAxis("Vertical")*Time.unscaledTime*Speed);
+        transform.position += new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime*Speed, 0, Input.GetAxis("Vertical")*Time.deltaTime * Speed);
        
     }
     private void OnEnable()

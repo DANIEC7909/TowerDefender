@@ -64,13 +64,7 @@ public class LevelScript : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (Input.anyKey)
-        {
-       /*     GameController.Instance.PathShowInProgress = false;
-            GameController.Instance.CameraController.transform.position= firstCameraPos;*/
-        }
-        else
-        {
+    
 
         if (GameController.Instance.PathShowInProgress&& GameController.Instance.CameraController)
         {
@@ -93,7 +87,7 @@ public class LevelScript : MonoBehaviour
                 }
                
             }
-        }
+       
 
         }
     }
